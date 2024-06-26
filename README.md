@@ -7,7 +7,7 @@ Building LLM apps with Streamlit.
 - [Run it locally](#run-it-locally)
 - [Demo app](#demo-app)
 - [Features](#features)
-- [Reference Document](#reference-document)
+- [Reference document](#reference-document)
 
 ## Introduction
 
