@@ -52,7 +52,8 @@ answer_prompt = ChatPromptTemplate.from_template(answer_template())
 
 def on_change_uploading():
     st.session_state.file_uploaded = True
-
+    
+st.session_state.chain = None
 if 'file_uploaded' not in st.session_state:
     st.session_state.file_uploaded = True
 
