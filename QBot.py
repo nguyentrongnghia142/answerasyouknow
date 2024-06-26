@@ -1,3 +1,6 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import streamlit as st
 import replicate
 import os
@@ -9,9 +12,7 @@ from langchain.prompts import PromptTemplate, ChatPromptTemplate
 from langchain.chains import ConversationalRetrievalChain
 from uuid import uuid4
 from utils import format_documents
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 
 if st.secrets['ACTIVE_TRACING']:
     client = active_chain_tracing(st.secrets['LANGCHAIN_API_KEY'])
