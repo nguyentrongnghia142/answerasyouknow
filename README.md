@@ -2,9 +2,16 @@
 
 Building LLM apps with Streamlit.
 
-## Overview of the App
+## Table of Contents
+- [Introduction](#introduction)
+- [Run it locally](#run-it-locally)
+- [Demo app](#demo-app)
+- [Features](#features)
+- [Reference Document](#reference-document)
 
-This app is a showcase about applying LLM techstack
+## Introduction
+
+This app is a showcase about applying LLMs tech stack. The app demonstrates the application of LLM technologies in various contexts.
 
 ## Run it locally
 
@@ -14,3 +21,15 @@ source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run QBot.py
 ```
+
+## Demo app
+
+[Powered by Streamlit](https://answerasyouknow.streamlit.app/)
+
+## Features
+- Q&A based on RAG
+- Chats chain by Llama model
+- Searching Agent by Langchain
+
+## Reference document
+- [1] https://github.com/streamlit/llm-examples
