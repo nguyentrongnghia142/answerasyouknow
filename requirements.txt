@@ -10,3 +10,4 @@ langchain-google-genai==1.0.3
 pillow
 pypdf
 langchain-chroma
+pysqlite3-binary
