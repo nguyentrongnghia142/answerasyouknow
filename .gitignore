@@ -1,0 +1,8 @@
+.venv
+__pycache__/
+.DS_Store
+secrets.toml
+.streamlit
+test*
+__pycache__/
+data/
