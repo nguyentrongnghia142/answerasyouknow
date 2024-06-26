@@ -18,7 +18,8 @@ if st.secrets['ACTIVE_TRACING']:
     client = active_chain_tracing(st.secrets['LANGCHAIN_API_KEY'])
 
 # App title
-st.set_page_config(page_title="💬 Customize Chatbot")
+st.title("💬 Q&A base on RAG")
+# st.set_page_config(page_title="💬 Customize Chatbot")
 
 standalone_question_template = """Given the following conversation and a follow up question, 
 rephrase the follow up question to be a standalone question, in its original language.\n\n
