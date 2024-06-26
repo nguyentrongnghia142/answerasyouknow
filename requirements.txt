@@ -9,3 +9,4 @@ replicate
 langchain-google-genai==1.0.3
 pillow
 pypdf
+chromadb
