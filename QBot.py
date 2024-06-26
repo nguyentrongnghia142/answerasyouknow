@@ -117,32 +117,30 @@ if uploaded_file is not None and st.session_state.file_uploaded:
     st.success(f"File uploaded")
     
     with st.spinner("Processing..."):
-        try:
-            documents = pdf_loader(file_path)
-            s_chain = summaries_chain(llm)
-            st.session_state.summary_doc = s_chain.invoke({"documents": format_documents(documents), "language": "english"})
-            chunks = split_documents(documents)
-            vector_store_google = create_vectorstore(
-                documents = chunks,
-                google_api_key= google_api,
-                vectorstore_name="Vit_All_Google_Embeddings"
-            )
-            st.session_state.base_retriever_google = vectorstore_backed_retriever(vector_store_google, "similarity", k = 5)
-            
-            st.session_state.chain = ConversationalRetrievalChain.from_llm(
-                condense_question_prompt=standalone_question_prompt,
-                combine_docs_chain_kwargs={'prompt': answer_prompt},
-                condense_question_llm=llm,
-                memory=memory,
-                retriever = st.session_state.base_retriever_google, 
-                llm=llm,
-                chain_type= "stuff",
-                verbose= False,
-                return_source_documents=True   
-            )
-        except Exception as e:
-            print(e)
-            
+  
+        documents = pdf_loader(file_path)
+        s_chain = summaries_chain(llm)
+        st.session_state.summary_doc = s_chain.invoke({"documents": format_documents(documents), "language": "english"})
+        chunks = split_documents(documents)
+        vector_store_google = create_vectorstore(
+            documents = chunks,
+            google_api_key= google_api,
+            vectorstore_name="Vit_All_Google_Embeddings"
+        )
+        st.session_state.base_retriever_google = vectorstore_backed_retriever(vector_store_google, "similarity", k = 5)
+        
+        st.session_state.chain = ConversationalRetrievalChain.from_llm(
+            condense_question_prompt=standalone_question_prompt,
+            combine_docs_chain_kwargs={'prompt': answer_prompt},
+            condense_question_llm=llm,
+            memory=memory,
+            retriever = st.session_state.base_retriever_google, 
+            llm=llm,
+            chain_type= "stuff",
+            verbose= False,
+            return_source_documents=True   
+        )
+        print(st.session_state.chain)
             
 
 
