@@ -13,15 +13,21 @@ from langchain_chroma import Chroma
 from langchain_community.embeddings import GPT4AllEmbeddings
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets['HUGGINGFACEHUB_API_TOKEN']
+google_api_key = st.secrets['GOOGLE_API_KEY']
+# model_name = "all-MiniLM-L6-v2.gguf2.f16.gguf"
+# gpt4all_kwargs = {'allow_download': 'True'}
+# embeddings = GPT4AllEmbeddings(
+#     model_name=model_name,
+#     gpt4all_kwargs=gpt4all_kwargs
+# )
 
-model_name = "all-MiniLM-L6-v2.gguf2.f16.gguf"
-gpt4all_kwargs = {'allow_download': 'True'}
-embeddings = GPT4AllEmbeddings(
-    model_name=model_name,
-    gpt4all_kwargs=gpt4all_kwargs
-)
+embeddings = GoogleGenerativeAIEmbeddings(
+            model="models/embedding-001",
+            google_api_key=google_api_key
+    )
 
 messages = [
     {"role": "user", "content": "Who are you?"},
