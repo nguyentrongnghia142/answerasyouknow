@@ -25,5 +25,5 @@ def format_documents(documents):
     page_number = documents[-1].metadata["page"]
     text_document = f"Provided file name is {file_name}, its has {page_number} pages.\n"
     for doc in documents:
-        text_document += f"page {doc.metadata["page"]}: {doc.page_content}\n"
+        text_document += f"page {doc.metadata['page']}: {doc.page_content}\n"
     return text_document
