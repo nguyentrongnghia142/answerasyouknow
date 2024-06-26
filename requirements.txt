@@ -9,5 +9,6 @@ replicate
 langchain-google-genai==1.0.3
 pillow
 pypdf
-langchain-chroma
+# langchain-chroma
+chromadb==0.4.14
 pysqlite3-binary
