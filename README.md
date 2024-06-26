@@ -33,3 +33,4 @@ streamlit run QBot.py
 
 ## Reference document
 - [1] https://github.com/streamlit/llm-examples
+- [2] https://github.com/AlaGrine/RAG_chatabot_with_Langchain
