@@ -10,5 +10,5 @@ langchain-google-genai==1.0.3
 pillow
 pypdf
 # langchain-chroma
-chromadb==0.4.14
+chromadb==0.3.29
 pysqlite3-binary
